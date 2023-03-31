@@ -40,10 +40,11 @@ ul li {
 button {
     background-color: #aa29e6;
     border: none;
+    border-radius: 0 0 10px 10px ;
     color: #fff;
     font-size: 1.1rem;
     width: 100%;
-    padding: 1.5rem;
+    padding: 1.3rem;
     cursor: pointer;
     font-size: 1.3rem;
     display: block;

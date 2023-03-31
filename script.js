@@ -15,3 +15,10 @@ let questions = [
         correctAnswer: 100
     }
 ]
+
+let currentQuestion = 0
+
+function loadQuiz() {
+     
+    currentQuestion++
+}
