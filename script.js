@@ -19,6 +19,6 @@ let questions = [
 let currentQuestion = 0
 
 function loadQuiz() {
-     
+      
     currentQuestion++
 }
