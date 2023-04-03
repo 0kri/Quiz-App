@@ -95,3 +95,9 @@ button:hover {
 .loading-part1 {
     border-radius: 9px 0 0 9px;
 }
+
+h2 {
+    padding: 4rem;
+    text-align: center;
+    /* color: #96be25; */
+}
