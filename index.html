@@ -8,28 +8,40 @@
     <title>Quiz App</title>
 </head>
 <body>
-    <div class="quiz-container">
+    <div class="quiz-container" id = "quiz">
         <div class="quiz-header">
             <h1 id="question">Question Text</h1>
             <ul>
                 <li>
-                    <input type="radio" id="a" name="answer">
+                    <input type="radio" id="a" name="answer" class="answer">
                     <label id = "a-text" for="a">Question</label>
                 </li>
                 <li>
-                    <input type="radio" id="b" name="answer">
+                    <input type="radio" id="b" name="answer" class="answer">
                     <label id = "b-text" for="b">Question</label>
                 </li>
                 <li>
-                    <input type="radio" id="c" name="answer">
+                    <input type="radio" id="c" name="answer" class="answer">
                     <label id = "c-text" for="c">Question</label>
                 </li>
                 <li>
-                    <input type="radio" id="d" name="answer"> 
+                    <input type="radio" id="d" name="answer" class="answer"> 
                     <label id = "d-text" for="d">Question</label>
                 </li>
             </ul>
         </div>
+<!--  -->
+        <div class="total-count">
+            <h3 id="count">Question 5/5</h3>
+            <div class="fill">
+                <div class="loading-part1"></div>
+                <div class="loading-part2"></div>
+                <div class="loading-part3"></div>
+                <div class="loading-part4"></div>
+                <div class="loading-part5"></div>
+            </div>
+        </div>
+<!--  -->
         <button id = "submit-btn">Next Question</button>
     </div>
     <script src="script.js"></script>

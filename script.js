@@ -1,52 +1,113 @@
 let quizData = [
     {
         question: "What is the smallest planet in our solar system?",
-        answers: ["Mercury", "Venus", "Earth", "Mars"],
-        correctAnswer: "Mercury"
+        a: "Mercury",
+        b: "Venus",
+        c: "Earth",
+        d: "Mars",
+        correctAnswer: "a"
     },
     {
         question: "What is the tallest mountain in the world?",
-        answers: [ "Mount Kailash ","Mount Kilimanjaro", "Mount Everest", "Mount Fuji"],
-        correctAnswer: "Mount Everest"
+        answers: [ "Mount Kailash","Mount Kilimanjaro", "Mount Everest", "Mount Fuji"],
+        a: "Mount Kailash",
+        b: "Mount Kilimanjaro",
+        c: "Mount Everest",
+        d: "Mount Fuji",
+        correctAnswer: "c"
     },
     {
         question: "What temperature centigrade does water boil at?",
-        answers: [120, 100, 75, 155],
-        correctAnswer: 100
+        a: 120,
+        b: 100,
+        c: 75,
+        d: 155,
+        correctAnswer: "b"
     }
 ]
+const quiz = document.getElementById("quiz")
+const answerEl = document.querySelectorAll(".answer")
 const questionEL = document.getElementById("question")
 const aText = document.getElementById("a-text") 
 const bText = document.getElementById("b-text") 
 const cText = document.getElementById("c-text") 
 const dText = document.getElementById("d-text") 
 const submitBtn = document.getElementById("submit-btn")
+
+let loadingPart1 = document.querySelector(".loading-part1")
+let loadingPart2 = document.querySelector(".loading-part2")
+let loadingPart3 = document.querySelector(".loading-part3")
+let loadingPart4 = document.querySelector(".loading-part4")
+let loadingPart5 = document.querySelector(".loading-part5")
+let loading = [loadingPart1, loadingPart2, loadingPart3, loadingPart4, loadingPart5]
+let count = document.querySelector("#count")
+
 let currentQuiz = 0
+let score = 0
+let countIndex = 0
 let index = 0
 
 loadQuiz()
 
 function loadQuiz() {
-    let currentQuizData = quizData[currentQuiz]
+    index++
+    deSelectAnswer()
+
+    const currentQuizData = quizData[currentQuiz]
+
     questionEL.innerText = currentQuizData.question
-    aText.innerText = currentQuizData.answers[0]
-    bText.innerText = currentQuizData.answers[1]
-    cText.innerText = currentQuizData.answers[2]
-    dText.innerText = currentQuizData.answers[3]
+    aText.innerText = currentQuizData.a
+    bText.innerText = currentQuizData.b
+    cText.innerText = currentQuizData.c
+    dText.innerText = currentQuizData.d
+
+    countIndex++
+    count.innerHTML = `Question ${countIndex} / ${quizData.length}`
+    loading[index].style.opacity = "1"
 }
 
 submitBtn.addEventListener("click", () => {
-    currentQuiz++
 
+    const answer = getSelected()
+
+    if(answer) {
+        if(answer === quizData[currentQuiz].correctAnswer) {
+            score++
+        }
+    }
+    
+    currentQuiz++
     if(currentQuiz < quizData.length) {
         loadQuiz()
     } else {
-        // show resulet
-        alert("Well Done")
+
+        quiz.innerHTML = `
+            <h2>You Answered ${score}/${quizData.length} questions</h2>
+
+            <button onclick = "location.reload()">New Game</button>
+        `
     }
-    loadQuiz()
+
 }) 
 
 function getSelected() {
-    const answersEl = document.querySelectorAll(".answer")
+
+    let answer = undefined
+
+    answerEl.forEach((answerEl) => {
+        if(answerEl.checked) {
+            answer = answerEl.id
+        }
+    })
+
+    return answer
+
+}
+
+function deSelectAnswer() {
+
+    answerEl.forEach((answersEl) => {
+        answersEl.checked = false
+    });
+
 }
