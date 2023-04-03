@@ -1,4 +1,4 @@
-let questions = [
+let quizData = [
     {
         question: "What is the smallest planet in our solar system?",
         answers: ["Mercury", "Venus", "Earth", "Mars"],
@@ -15,10 +15,38 @@ let questions = [
         correctAnswer: 100
     }
 ]
+const questionEL = document.getElementById("question")
+const aText = document.getElementById("a-text") 
+const bText = document.getElementById("b-text") 
+const cText = document.getElementById("c-text") 
+const dText = document.getElementById("d-text") 
+const submitBtn = document.getElementById("submit-btn")
+let currentQuiz = 0
+let index = 0
 
-let currentQuestion = 0
+loadQuiz()
 
 function loadQuiz() {
-      
-    currentQuestion++
+    let currentQuizData = quizData[currentQuiz]
+    questionEL.innerText = currentQuizData.question
+    aText.innerText = currentQuizData.answers[0]
+    bText.innerText = currentQuizData.answers[1]
+    cText.innerText = currentQuizData.answers[2]
+    dText.innerText = currentQuizData.answers[3]
+}
+
+submitBtn.addEventListener("click", () => {
+    currentQuiz++
+
+    if(currentQuiz < quizData.length) {
+        loadQuiz()
+    } else {
+        // show resulet
+        alert("Well Done")
+    }
+    loadQuiz()
+}) 
+
+function getSelected() {
+    const answersEl = document.querySelectorAll(".answer")
 }
