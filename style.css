@@ -80,15 +80,16 @@ button:hover {
     /* opacity: 0; */
 }
 
-.loading-part1, .loading-part2, .loading-part2, .loading-part3, .loading-part4, .loading-part5{
-    width: calc(300px / );
+.loading-part1, .loading-part2, .loading-part3 {
+    margin-top: 15px;
+    width: calc(300px / 3);
     height: 15px;
     background-color: #96be25;
     /* display: none; */
     opacity: 0;
 }
 
-.loading-part5{
+.loading-part3 {
     border-radius: 0 9px 9px 0px;
 }
 .loading-part1 {

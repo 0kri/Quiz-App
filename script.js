@@ -37,9 +37,7 @@ const submitBtn = document.getElementById("submit-btn")
 let loadingPart1 = document.querySelector(".loading-part1")
 let loadingPart2 = document.querySelector(".loading-part2")
 let loadingPart3 = document.querySelector(".loading-part3")
-let loadingPart4 = document.querySelector(".loading-part4")
-let loadingPart5 = document.querySelector(".loading-part5")
-let loading = [loadingPart1, loadingPart2, loadingPart3, loadingPart4, loadingPart5]
+let loading = [loadingPart1, loadingPart2, loadingPart3]
 let count = document.querySelector("#count")
 
 let currentQuiz = 0
@@ -50,7 +48,8 @@ let index = 0
 loadQuiz()
 
 function loadQuiz() {
-    index++
+    countIndex++
+
     deSelectAnswer()
 
     const currentQuizData = quizData[currentQuiz]
@@ -61,9 +60,11 @@ function loadQuiz() {
     cText.innerText = currentQuizData.c
     dText.innerText = currentQuizData.d
 
-    countIndex++
     count.innerHTML = `Question ${countIndex} / ${quizData.length}`
     loading[index].style.opacity = "1"
+    index++
+
+
 }
 
 submitBtn.addEventListener("click", () => {
