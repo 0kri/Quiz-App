@@ -81,10 +81,12 @@ submitBtn.addEventListener("click", () => {
         loadQuiz()
     } else {
         submitBtn.innerText = "Submit"
-        
+
         quiz.innerHTML = `
             <div class = "reward-wrapper">
-                <h4>Thank you for playing</h4>
+                <h4>Thank you for playing
+                    <p class= "hover-gift">Hover gift to recive it</p>
+                </h4>
 
                 <div class = "reward"></div> 
 

@@ -114,3 +114,8 @@ h2, h4{
 .reward:hover {
     background-image: url("photo/happy.gif");
 }
+
+.hover-gift {
+    margin-top: 5px;
+    font-size: 0.7rem;
+}
