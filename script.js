@@ -64,7 +64,6 @@ function loadQuiz() {
     loading[index].style.opacity = "1"
     index++
 
-
 }
 
 submitBtn.addEventListener("click", () => {
@@ -81,7 +80,8 @@ submitBtn.addEventListener("click", () => {
     if(currentQuiz < quizData.length) {
         loadQuiz()
     } else {
-
+        submitBtn.innerText = "Submit"
+        
         quiz.innerHTML = `
             <div class = "reward-wrapper">
                 <h4>Thank you for playing</h4>
