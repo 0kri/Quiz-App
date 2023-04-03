@@ -96,8 +96,21 @@ button:hover {
     border-radius: 9px 0 0 9px;
 }
 
-h2 {
+h2, h4{
     padding: 4rem;
     text-align: center;
     /* color: #96be25; */
+}
+
+.reward {
+    background-image: url("photo/gift.webp");
+    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.reward:hover {
+    background-image: url("photo/happy.gif");
 }

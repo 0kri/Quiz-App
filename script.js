@@ -83,9 +83,15 @@ submitBtn.addEventListener("click", () => {
     } else {
 
         quiz.innerHTML = `
-            <h2>You Answered ${score}/${quizData.length} questions</h2>
+            <div class = "reward-wrapper">
+                <h4>Thank you for playing</h4>
 
-            <button onclick = "location.reload()">New Game</button>
+                <div class = "reward"></div> 
+
+                <h2>You Answered ${score}/${quizData.length} Questions</h2>
+
+                <button onclick = "location.reload()">New Game</button>
+            </div>
         `
     }
 
